@@ -29,7 +29,7 @@
 % ##### Font and Typing
 \XeTeXlinebreaklocale "th_TH" %สำหรับตัดคำ
 \XeTeXlinebreakskip = 0pt plus 1pt
-\setmainfont[Scale=1.33]{Angsana New}
+\setmainfont[Scale=1.3]{Angsana New}
 \linespread{1.33}
 
 \renewcommand{\large}{\fontsize{13.53}{16.24}\selectfont}

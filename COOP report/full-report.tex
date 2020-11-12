@@ -4,6 +4,19 @@
 \usepackage{graphicx,amsmath,latexsym,amssymb,amsthm}
 \usepackage{indentfirst}
 \usepackage{cite}
+\usepackage{float}
+\usepackage{makecell, caption}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{vcell}
+\usepackage{adjustbox}
+
+\newlist{tabitemize}{itemize}{1}
+\setlist[tabitemize]{label=\textbullet,nosep,after=\strut,align=parleft,leftmargin=*,}
+\setcounter{secnumdepth}{4}
 
 \graphicspath{ {images/} }
 
@@ -14,43 +27,43 @@
 \makeatother
 
 % Your thesis title (THAI)
-\newcommand{\ThesisTiTle}{ชื่อโปรเจ็กต์จบ}
+\newcommand{\ThesisTiTle}{เว็บแอพพลิเคชั่นประเมินความสามารถเบื้องต้นของผู้สมัครงาน}
 % Your thesis title (ENG)
-\newcommand{\ThesisTiTleENG}{Project name}
+\newcommand{\ThesisTiTleENG}{Pre-Employment Testing}
 % Your name
-\newcommand{\AuName}{ชื่อ นามสกุล}
+\newcommand{\AuName}{นายศตวรรษ ธิติศุภกุล}
 % Your name ENG
-\newcommand{\AuNameENG}{Name Surname}
+\newcommand{\AuNameENG}{Satawat Thtisupakul}
 % Department / Program
 \newcommand{\DepartmentENG}{Information Technology}
 % Your student ID
-\newcommand{\SId}{xx07xxxx}
+\newcommand{\SId}{60070093}
 % Your advisor
-\newcommand{\Advisor}{ชื่อที่ปรึกษา}
+\newcommand{\Advisor}{ดร.สุพัณณดา โชติพันธ์}
 % Your advisor
 \newcommand{\AdvisorENG}{AdvisorName AdvisorSurname}
 % Your advisor employee
-\newcommand{\Exami}{ชื่อพนักงานที่ปรึกษา}
+\newcommand{\Exami}{นายวิวัฒน์ เส็งอนันต์}
 % ชื่อสถานประกอบการ
-\newcommand{\Company}{ชื่อบริษัท}
+\newcommand{\Company}{บริษัท ไซเจ็น}
 % ภาคเรียนที่ (in normal letters)
 \newcommand{\Sem}{1}
 % ปีการศึกษา (in normal letters)
-\newcommand{\AcaY}{2561}
+\newcommand{\AcaY}{2563}
 % ปีการศึกษา (in normal letters)
-\newcommand{\AcaYAD}{2018}
+\newcommand{\AcaYAD}{2020}
 % วันส่งรายงาน
-\newcommand{\SubD}{10 พฤศจิกายน พ.ศ. 2561}
+\newcommand{\SubD}{xx พฤศจิกายน พ.ศ. 2563}
 % วันเริ่มทำงาน
-\newcommand{\StartDWork}{23 กรกฎาคม พ.ศ. 2561}
+\newcommand{\StartDWork}{1 มิถุนายน พ.ศ. 2563}
 % วันสุดท้ายของการทำงาน
-\newcommand{\EndDWork}{30 พฤศจิกายน พ.ศ. 2561}
+\newcommand{\EndDWork}{30 กันยายน พ.ศ. 2563}
 % ที่อยู่สถานประกอบการ
-\newcommand{\Address}{ที่อยู่}
+\newcommand{\Address}{65/60 ชั้น 6 อาคารชำนาญเพ็ญชาติบิสเนสเซ็นเตอร์ ถนนพระราม 9 เขตห้วยขวาง, กรุงเทพมหานคร 10310}
 % เว็บไซต์สถานประกอบการ
-\newcommand{\Website}{https://example.com}
+\newcommand{\Website}{https://zygencenter.com/}
 % ตำแหน่งานที่ปฏิบัติ
-\newcommand{\Position}{ตำแหน่งงานที่ปฏิบัติ}
+\newcommand{\Position}{Full Stack Developer}
 
 \begin{document}    
     \frontmatter
@@ -62,8 +75,7 @@
     \makeletter
     \makeack{
         \begin{enumerate}
-            \item คุณ ชื่อ สกุล \quad ตำแหน่ง xxxxxxx (พนักงานที่ปรึกษา)
-            \item คุณ ชื่อ สกุล \quad ตำแหน่ง xxxxxxx
+            \item คุณ วิวัฒน์ เส็งอนันต์ \quad ตำแหน่ง Web Developer (พนักงานที่ปรึกษา)
         \end{enumerate}
     }
     \makeapproveletter
@@ -100,14 +112,15 @@
     \include{chapter1}
     \include{chapter2}
     \include{chapter3}
-    \include{chapter4}
-    \include{chapter5}
     
     \clearpage
     \addcontentsline{toc}{chapter}{บรรณานุกรม}
     \bibliographystyle{IEEEtran}
     \bibliography{reference}
+
+    \newpage
     
+
     \startappendix
     \include{appendix}
     
