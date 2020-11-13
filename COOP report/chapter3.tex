@@ -17,31 +17,34 @@
 
 \subsection{ความต้องการที่เป็นหน้าที่หลักของระบบ (Functional Requirement)}
 \begin{enumerate}
-  \item ผู้ใช้งานสามารถสามารถลงทะเบียนเป็นสมาชิกเพื่อใช้งานเว็บแอพพลิเคชั่นได้  
+  \item ผู้ใช้งานสามารถสามารถลงทะเบียนเป็นสมาชิกเพื่อใช้งานเว็บแอพพลิเคชั่นได้   
   \item ผู้ใช้ต้องยืนยันตัวตนผ่านอีเมลหลังจากทำการลงทะเบียน ถึงจะเข้าใช้งานระบบได้
-  \item ผู้ใช้งานสามารถสร้าง, แก้ไข และลบหมวดหมู่ข้อสอบได้
-  \item ระบบสามารถป้องกันการรีเฟรชเพจและการเปลี่ยนหน้าได้ หากผู้ใช้กำลังสร้างหรือแก้ไขหมวดหมู่ข้อสอบอยุ่
-  \item ผู้ใช้งานสามารถยกเลิกการทำข้อสอบได้
-  \item ผู้ใช้งานไม่สามารถลบหมวดหมู่ข้อสอบได้ หากถูกใช้งานอยู่ในข้อสอบ
-  \item หากหมวดหมู่ข้อสอบถูกส่งไปให้ผู้สมัครงานทำแล้ว หมวดหมู่ข้อสอบนั้นสามารถแก้ไขได้เฉพาะคำตอบเท่านั้น ไม่สามารถแก้ไขคำถามได้
+  \item ผู้ใช้งานสามารถสร้าง, แก้ไข และลบคำถามในหมวดหมู่คำถามได้
+  \item ระบบสามารถป้องกันการรีเฟรชเพจ หรือการเปลี่ยนหน้าได้ หากผู้ใช้กำลังสร้างหรือแก้ไขคำถามในหมวดหมู่คำถาม
+  \item ผู้ใช้งานสามารถยกเลิกการสร้างหมวดหมู่คำถามได้
+  \item ผู้ใช้งานไม่สามารถลบหมวดหมู่คำถามได้ หากหมวดหมู่นั้นถูกใช้งานอยู่ในข้อสอบ
   \item ผู้ใช้งานสามารถสร้างคำถามประเภท ปรนัย, อัตนัย และคำถามที่มีไฟล์แนบได้
-  \item คำถามที่เป็นปรนัย สามารถเลือกตอบมากกว่า 1 คำถามได้
-  \item สามารถเพิ่มรูปภาพในคำตอบที่เป็นปรนัยได้
-  \item ผู้ใช้งานสามารถเปิดหมวดหมู่ข้อสอบให้เป็นสาธารณะได้
-  \item หมวดหมู่ข้อสอบที่เป็นสาธารณะ ผู้ที่ไม่ใช้เจ้าของไม่สามารถแก้ไขได้ แต่ระบบสามารถคัดลอกหมวดหมู่ข้อสอบสาธารณะไปเป็นเป็นของตนเองได้ หากผู้ที่ไม่ใช้เจ้าของต้องการทำการแก้ไข
-  \item ผู้ใช้งานสามารถค้นหาหมวดหมู่ข้อสอบได้
-  \item ผู้ใช้งานสามารถสร้างข้อสอบ ที่กำหนดหมวดหมู่ข้อสอบที่ต้องการเลือกคำถาม,จำนวนข้อ และความยากได้ โดยข้อสอบจะทำการสุ่มเมื่อผู้ใช้ส่งให้ผู้ทำข้อสอบ
-  \item ผู้ใช้สามารถลบแก้ไขหมวดหมู่ข้อสอบที่ใช้ จำนวนข้อ และระดับความยากของข้อสอบได้
+  \item คำถามที่เป็นปรนัย สามารถเลือกให้มีข้อถูกมากกว่า 1 ข้อได้
+  \item สามารถใส่รูปภาพเพิ่มในตัวเลือกคำตอบของคำถามประเภทปรนัยได้
+  \item หากผู้ใช้งานส่งข้อสอบให้ผู้สมัครงานทำแล้ว ถ้าหมวดหมู่คำถามนั้นถูกใช้งานในข้องสอบ คำถามในหมวดหมู่นั้นจะสามารถแก้ไขได้เฉพาะเฉลยเท่านั้น ไม่สามารถแข้ไขคำถามได้ โดยหากต้องการแก้ไขให้ทำการคัดลอกหมวดหมู่คำถามของตนเองมาแก้ไขเป็นหมวดหมู่ใหม่
+  \item ผู้ใช้งานสามารถคัดลอกหมวดหมู่คำถามของตนเองได้
+  \item ผู้ใช้งานสามารถเปิดหมวดหมู่คำถามให้เป็นสาธารณะได้
+  \item หมวดหมู่คำถามที่เป็นสาธารณะ ผู้ที่ไม่ใช้เจ้าของไม่สามารถแก้ไขได้ โดยผู้ใช้สามารถคัดลอกหมวดหมู่คำถามที่เป็นสาธารณะไปเป็นเป็นของตนเองได้ หากผู้ใช้ไม่ใช้เจ้าของแต่ต้องการแก้ไข
+  \item ผู้ใช้งานสามารถค้นหาหมวดหมู่คำถามได้
+  \item ผู้ใช้งานสามารถสร้างข้อสอบ ที่กำหนดหมวดหมู่คำถามที่ต้องการ,จำนวนข้อ และความยากได้ โดยข้อสอบจะทำการสุ่มเมื่อผู้ใช้ส่งให้ผู้ทำข้อสอบ
+  \item ระบบสามารถป้องกันการรีเฟรชเพจ หรือการเปลี่ยนหน้าได้ หากผู้ใช้กำลังสร้างหรือแก้ไขข้อสอบ
+  \item ผู้ใช้สามารถลบแก้ไขหมวดหมู่คำถามที่ใช้, จำนวนข้อ และระดับความยากของข้อสอบได้
   \item ผู้ใช้สามารถค้นหาข้อสอบได้
   \item ผู้ใช้สามารถเปิดข้อสอบให้เป็นสาธารณะได้
-  \item ข้อสอบที่เป็นสาธารณะ ผู้ที่ไม่ใช้เจ้าของไม่สามารถแก้ไขได้ โดยระบบสามารถคัดลอกข้อสอบสาธารณะไปเป็นเป็นของตนเองได้ หากผู้ที่ไม่ใช้เจ้าของต้องการทำการแก้ไข
+  \item ข้อสอบที่เป็นสาธารณะ ผู้ที่ไม่ใช้เจ้าของไม่สามารถแก้ไขได้ โดยผู้ใช้สามารถคัดลอกข้อสอบสาธารณะไปเป็นเป็นของตนเองได้ หากผู้ใช้ไม่ใช้เจ้าของแต่ต้องการแก้ไข
+  \item หากผู้ใช้งานส่งข้อสอบให้ผู้สมัครงานทำแล้ว ข้อสอบนั้นจะไม่สามารถแก้ไขได้
   \item ผู้ใช้สามารถกำหนดระยะเวลาในการทำข้อสอบได้
   \item ผู้ใช้สามารถกำหนดวันหมดอายุของข้อสอบได้
-  \item ผู้ใช้สามารถส่งข้อสอบให้ผู้สมัครงานด้วยอีเมลผ่านเว็บแอพพลิเคชั่นได้
+  \item ผู้ใช้สามารถส่งข้อสอบให้ผู้สมัครงานผ่านอีเมลได้
   \item ผู้ทำข้อสอบสามารถเข้ามาทำข้อสอบในเว็บแอพพลิเคชั่นได้ตลอด หากเวลาในการทำข้อสอบยังไม่หมด
   \item เมื่อผู้ทำข้อสอบทำการส่งข้อสอบแล้ว ระบบสามารถตรวจข้อสอบที่เป็นปรนัยได้
   \item มีการแสดงสถานะบอกว่าผู้ใช้งาน ตรวจข้อสอบนั้นหรือยัง
-  \item มีการสรุปคะแนนรวมข้อผู้สมัครงาน
+  \item มีการสรุปคะแนนรวมข้อผู้ทำข้อสอบ
 \end{enumerate}
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash}p{#1}}
@@ -52,7 +55,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\columnwidth]{examaUseCaseDiagram.png}
+  \includegraphics[width=0.78\columnwidth]{examaUseCaseDiagram .png}
   \caption{แผนภาพยูสเคสของระบบ}
   \label{Fig:examaUseCaseDiagram}
 \end{figure}
@@ -95,7 +98,7 @@
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\
                                                       2.ระบบแสดงแบบฟอร์มให้กรอกข้อมูล\\\\\\\\\\
-                                                      4.ระบบทำการส่งอีเมลให้ผู้ใช้เพื่อทำการยืนยันอีเมล\\\\\\
+                                                      4.ระบบทำการส่งอีเมลให้ผู้\\ใช้เพื่อทำการยืนยันอีเมล\\\\\\
                                                       6.ระบบทำการยืนยันอีเมล\\ แล้วแสดงหน้าจอหลักของผู้ใช้งาน
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
@@ -155,18 +158,18 @@
   \label{Table:login}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส สร้างหมวดหมู่ของข้อสอบ}
+\subsubsection{รายละเอียดยูสเคส สร้างหมวดหมู่คำถาม}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{3}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{สร้างหมวดหมู่ของข้อสอบ}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{สร้างหมวดหมู่คำถาม}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการสร้างหมวดหมู่ของข้อสอบ}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการงหมวดหมู่คำถาม}\\
   \hline
-  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ต้องการสร้างหมวดหมู่ของข้อสอบ ไว้ใช้ในข้อสอบของ\\ตนเอง หรือให้พนักงานคนอื่นใช้\end{tabular}}}\\[-\rowheight]
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ต้องการสร้างหมวดหมู่คำถาม ไว้ใช้ในข้อสอบของ\\ตนเอง หรือให้พนักงานคนอื่นใช้\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้ ออกข้อสอบโดยแบ่งแยกตามแต่ละหมวดหมู่ เช่น\\คณิตศาสตร์, โปรแกรมมิ่ง หรือ แบบทดสอบสติปัญญา โดยมีชนิด\\คำถามแบ่งออกเป็น อัตนัย, ปรนัย และคำถามที่มีไฟล์แนบ\end{tabular}}}\\[-\rowheight]
@@ -180,7 +183,7 @@
   \hline
   Pre - Conditions:                                 & \multicolumn{2}{l|}{ผู้ใช้ต้องทำการเข้าสู่ระบบ}\\ 
   \hline
-  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ผู้ใช้มีหมวดหมู่ของข้อสอบที่ตนเองสร้างขึ้น และแสดงหน้าหมวด\\หมู่ทั้งหมดของผู้ใช้\end{tabular}}}\\[-\rowheight]
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ผู้ใช้มีหมวดหมู่คำถามที่ตนเองสร้างขึ้น และแสดงหน้าหมวด\\หมู่ทั้งหมดของผู้ใช้\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
@@ -188,12 +191,12 @@
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       1.ไปที่หน้าสร้างหมวดหมู่\\\\\\
                                                       3.ผู้ใช้กรอกชื่อหมวดหมู่\\และกรอกหัวเรื่อง\\
-                                                      4.สร้างคำถามภายใต้ หมวดหมู่นั้นโดยสามารถเลือก\\ระดับความยาก และประเภทของคำถาม แล้วทำการคลิกสร้างหมวดหมู่\\\\\\\\\\                                                 
+                                                      4.สร้างคำถามภายใต้ หมวดหมู่นั้นโดยสามารถเลือก\\ระดับความยาก และประเภทของคำถาม แล้วทำการคลิกสร้างหมวดหมู่\\\\\\\\                                                
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\
-                                                      2.ระบบแสดงหน้าสร้าง\\หมวดหมู่ของข้อสอบ\\\\\\\\\\\\\\\\
-                                                      5.ระบบทำการสร้างหมดหมู่ของข้อสอบ แล้วแสดงหน้าหมวดหมู่ข้อสอบทั้งหมด\\ของผู้ใช้
+                                                      2.ระบบแสดงหน้าสร้าง\\หมวดหมู่คำถาม\\\\\\\\\\\\\\\\
+                                                      5.ระบบทำการสร้างหมดหมู่คำถาม แล้วแสดงหน้าหมวด\\หมู่คำถามทั้งหมดของผู้ใช้
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
   \hline
@@ -201,35 +204,35 @@
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส สร้างหมวดหมู่ของข้อสอบ}
+  \caption{รายละเอียดยูสเคส สร้างหมวดหมู่คำถาม}
   \label{Table:createCategory}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส ดูหมวดหมู่ข้อสอบของผู้ใช้}
+\subsubsection{รายละเอียดยูสเคส ดูหมวดหมู่คำถามของผู้ใช้}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{4}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{ดูหมวดหมู่ข้อสอบของผู้ใช้}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูหมวดหมู่คำถามของผู้ใช้}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูหมวดหมู่ข้อสอบของตนเอง}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูหมวดหมู่คำถามของตนเอง}\\ 
   \hline
-  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- เมื่อผู้ใช้ต้องการดูหมวดหมู่ของข้อสอบของตนเอง\\- เมื่อผู้ใช้สร้างประเภทของข้อสอบสำเร็จ หน้าเว็ปจะทำการไป\\\hspace{0.22cm}แสดงผลที่หน้าหมวดหมู่ข้อสอบทั้งหมเของผู้ใช้\end{tabular}}}\\[-\rowheight]
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- เมื่อผู้ใช้ต้องการดูหมวดหมู่คำถามของตนเอง\\- เมื่อผู้ใช้สร้างประเภทของข้อสอบสำเร็จ หน้าเว็ปจะทำการไป\\\hspace{0.22cm}แสดงผลที่หน้าหมวดหมู่คำถามทั้งหมเของผู้ใช้\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานดูหมวดหมู่ของข้อสอบที่ตนเองสร้างขึ้น หรือ\\หมวดหมู่ที่ไปคัดลอกมาจากหมวดหมู่สาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานดูหมวดหมู่คำถามที่ตนเองสร้างขึ้น หรือ\\หมวดหมู่คำถามที่คัดลอกมาจากหมวดหมู่สาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
   \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่ของข้อสอบ, คัดลอกหมวดหมู่ข้อสอบ\\จากหมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่คำถาม, คัดลอกหมวดหมู่คำถาม\\จากหมวดหมู่คำถามสาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
   \hline
-  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่ของข้อสอบ หรือคัดลอกหมวดหมู่ข้อสอบจาก\\\hspace{0.22cm}หมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่คำถาม หรือคัดลอกหมวดหมู่คำถามจาก\\\hspace{0.22cm}หมวดหมู่คำถามสาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}แสดงหน้าหมวดหมู่ทั้งหมดของผู้ใช้\end{tabular}}}\\[-\rowheight]
@@ -238,7 +241,7 @@
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูหมวดหมู่ข้อ\\สอบของผู้ใช้                                            
+                                                      1.ไปที่หน้าดูหมวดหมู่คำ\\ถามของผู้ใช้                                            
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\\\
@@ -246,39 +249,39 @@
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
   \hline
-  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ผู้ใช้ไม่มีหมวดหมู่ข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ผู้ใช้ไม่มีหมวดหมู่คำถาม\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส ดูหมวดหมู่ข้อสอบของผู้ใช้}
+  \caption{รายละเอียดยูสเคส ดูหมวดหมู่คำถามของผู้ใช้}
   \label{Table:viewMyCategory}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส แก้ไขหมวดหมู่ข้อสอบของผู้ใช้}
+\subsubsection{รายละเอียดยูสเคส แก้ไขหมวดหมู่คำถามของผู้ใช้}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{5}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{แก้ไขหมวดหมู่ข้อสอบของผู้ใช้}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{แก้ไขหมวดหมู่คำถามของผู้ใช้}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการแก้ไขหมวดหมู่ข้อสอบของตนเอง}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการแก้ไขหมวดหมู่คำถามของตนเอง}\\ 
   \hline
-  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ต้องการแก้ไขรายละเอียดในหมวดหมู่ข้อสอบ เช่นเพิ่มคำ\\ถาม, แก้ไขคำถาม หรือแก้ไขชื่อหมวดหมู่\end{tabular}}}\\[-\rowheight]
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ต้องการแก้ไขรายละเอียดในหมวดหมู่คำถาม เช่นเพิ่มคำ\\ถาม, แก้ไขคำถาม หรือแก้ไขชื่อหมวดหมู่\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานแก้ไขรายละเอียดต่างๆในหมวดหมู่ข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานแก้ไขรายละเอียดต่างๆในหมวดหมู่คำถาม\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
   \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่ของข้อสอบ, คัดลอกหมวดหมู่ข้อสอบ\\จากหมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่คำถาม, คัดลอกหมวดหมู่คำถาม\\จากหมวดหมู่คำถามสาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
   \hline
-  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่ของข้อสอบ หรือคัดลอกหมวดหมู่ข้อสอบจาก\\\hspace{0.22cm}หมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่คำถาม หรือคัดลอกหมวดหมู่คำถามจาก\\\hspace{0.22cm}หมวดหมู่คำถามสาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}แสดงหน้าหมวดหมู่ทั้งหมดของผู้ใช้\end{tabular}}}\\[-\rowheight]
@@ -287,8 +290,8 @@
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูหมวดหมู่ข้อ\\สอบของผู้ใช้\\\\\\
-                                                      3.คลิกที่หมวดหมู่ของ\\ข้อสอบที่ต้องการแก้ไข\\\\\\
+                                                      1.ไปที่หน้าดูหมวดหมู่คำ\\ถามของผู้ใช้\\\\\\
+                                                      3.คลิกที่หมวดหมู่คำถาม\\ที่ต้องการแก้ไข\\\\\\
                                                       5.ผู้ใช้ทำการแก้ไขข้อมูล\\ต่างๆในประเภทที่ต้องการ\\ แล้วทำการคลิกยืนยันการ\\แก้ไข\\\\\\\\
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
@@ -305,49 +308,49 @@
                                                           - ผู้ใช้กรอกชื่อหมวดหมู่ซ้ำกับ หมวดหมู่ที่ตนเองมีอยู่แล้ว\\
                                                           - ผู้ใช้กรอกรายละเอียดไม่ครบถ้วน หรือไม่ตรงเงื่อนไข\\
                                                           - ไฟล์ที่แนบมามีขนาดใหญ่เกินที่กำหนด หรือประเภทของไฟล์\\\hspace{0.22cm}ไม่ถูกต้อง\\
-                                                          - สามารถแก้ไขได้แค่คำตอบ หากข้อสอบเคยถูกส่งไปแล้ว
+                                                          - สามารถแก้ไขได้เฉพาะคำตอบ หากข้อสอบเคยถูกใช้ไปแล้ว
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส แก้ไขหมวดหมู่ข้อสอบของผู้ใช้}
+  \caption{รายละเอียดยูสเคส แก้ไขหมวดหมู่คำถามของผู้ใช้}
   \label{Table:editMyCategory}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส คัดลอกหมวดหมู่ข้อสอบของผู้ใช้}
+\subsubsection{รายละเอียดยูสเคส คัดลอกหมวดหมู่คำถามของผู้ใช้}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{6}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{คัดลอกหมวดหมู่ข้อสอบของผู้ใช้}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{คัดลอกหมวดหมู่คำถามของผู้ใช้}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการคัดลอกหมวดหมู่ข้อสอบของตนเอง}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการคัดลอกหมวดหมู่คำถามของตนเอง}\\ 
   \hline
-  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ต้องการแก้ไขหมวดหมู่ของข้อสอบที่ถูกส่งให้ผู้สมัครงาน\\แล้ว ทำให้ไม่สามารถแก้ไขหมวดหมู่เดิมได้ หรือต้องการคัดลอก\\หมวดหมู่มาแก้ไข โดยที่ไม่ต้องการให้กระทบหมวดหมู่เดิม\end{tabular}}}\\[-\rowheight]
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ต้องการแก้ไขหมวดหมู่คำถามที่ถูกส่งให้ผู้สมัครงาน\\แล้ว ทำให้ไม่สามารถแก้ไขหมวดหมู่เดิมได้ หรือต้องการคัดลอก\\หมวดหมู่มาแก้ไข โดยที่ไม่ต้องการให้กระทบหมวดหมู่เดิม\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานคัดลอกหมวดหมู่ข้อสอบของตนเอง\end{tabular}}}\\[-\rowheight]
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานคัดลอกหมวดหมู่คำถามของตนเอง\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
   \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่ของข้อสอบ, ส่งข้อสอบให้ผู้สมัคร\end{tabular}}}\\[-\rowheight]
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่คำถาม, ส่งข้อสอบให้ผู้สมัคร\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
   \hline
-  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่ของข้อสอบ หรือคัดลอกหมวดหมู่ข้อสอบจาก\\\hspace{0.22cm}หมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่คำถาม หรือคัดลอกหมวดหมู่คำถามจาก\\\hspace{0.22cm}หมวดหมู่คำถามสาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการคัดลอกหมวดหมู่ของข้อสอบที่ผู้ใช้ต้องการ\end{tabular}}}\\[-\rowheight]
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการคัดลอกหหมวดหมู่คำถามที่ผู้ใช้ต้องการ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูหมวดหมู่\\ข้อสอบของผู้ใช้\\\\\\
+                                                      1.ไปที่หน้าดูหมวดหมู่\\คำถามของผู้ใช้\\\\\\
                                                       3.คลิกปุ่มคักลอกที่หมวด\\หมู่ที่ต้องการคัดลอก\\\\\\
                                                       5.ผู้ใช้งานกดยืนยันการคัด\\ลอก\\\\\\
                                                       \end{tabular}}
@@ -355,99 +358,99 @@
                                                       \\\\
                                                       2.ระบบแสดงหมวดหมู่\\ทั้งหมดของผู้ใช้\\\\\\
                                                       4.ระบบแสดงหน้ายืนยันการคัดลอก\\\\\\
-                                                      6.ระบบทำการคัดลอกหมวดหมู่ข้อสอบนั้น\\
+                                                      6.ระบบทำการคัดลอกหมวดหมู่คำถามนั้น\\
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
   \hline
   \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          ผู้ใช้ไม่มีหมวดหมู่ข้อสอบ
+                                                          ผู้ใช้ไม่มีหมวดหมู่คำถาม
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส คัดลอกหมวดหมู่ข้อสอบของผู้ใช้}
+  \caption{รายละเอียดยูสเคส คัดลอกหมวดหมู่คำถามของผู้ใช้}
   \label{Table:copyMyCategory}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส ลบหมวดหมู่ข้อสอบของผู้ใช้}
+\subsubsection{รายละเอียดยูสเคส ลบหมวดหมู่คำถามของผู้ใช้}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{7}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{ลบหมวดหมู่ข้อสอบของผู้ใช้}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{ลบหมวดหมู่คำถามของผู้ใช้}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการลบหมวดหมู่ข้อสอบของตนเอง}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการลบหมวดหมู่คำถามของตนเอง}\\ 
   \hline
-  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ไม่ต้องการที่จะใช้หมวดหมู่ข้อสอบนั้นๆแล้ว\end{tabular}}}\\[-\rowheight]
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เมื่อผู้ใช้ไม่ต้องการหมวดหมู่คำถามนั้นๆแล้ว\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานลบหมวดหมู่ข้อสอบออกจากหมวดหมู่ข้อสอบ\\ของตนเอง\end{tabular}}}\\[-\rowheight]
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้งานลบหมวดหมู่คำถามออกจากหมวดหมู่คำถาม\\ของตนเอง\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
   \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่ของข้อสอบ, คัดลอกหมวดหมู่ข้อสอบ\\จากหมวดหมู่ข้อสอบสาธารณะ, ข้อสอบของผู้ใช้\end{tabular}}}\\[-\rowheight]
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่คำถาม, คัดลอกหมวดหมู่คำถาม\\จากหมวดหมู่คำถามสาธารณะ, ข้อสอบของผู้ใช้\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
   \hline
-  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่ของข้อสอบ หรือคัดลอกหมวดหมู่ข้อสอบจาก\\หมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}- ผู้ใช้ต้องทำการเข้าสู่ระบบ\\- สร้างหมวดหมู่คำถาม หรือคัดลอกหมวดหมู่คำถามจาก\\\hspace{0.22cm}หมวดหมู่สาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบลบหมวดหมู่ข้อสอบของผู้ใช้\end{tabular}}}\\[-\rowheight]
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบลบหมวดหมู่คำถามของผู้ใช้\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูหมวดหมู่ข้อ\\สอบของผู้ใช้\\\\\\
-                                                      3.คลิกที่รูปถึงขยะของ\\หมวดหมู่ข้อสอบที่ต้องการลบ\\\\\\\\
+                                                      1.ไปที่หน้าดูหมวดหมู่คำ\\ถามของผู้ใช้\\\\\\
+                                                      3.คลิกที่รูปถึงขยะของ\\หมวดหมู่คำถามที่ต้องการลบ\\\\\\\\
                                                       5.ผู้ใช้ทำการยืนยันการลบ\\\\\\
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\\\
                                                       2.ระบบแสดงหมวดหมู่\\ทั้งหมดของผู้ใช้\\\\\\\\
                                                       4.ระบบทำการแสดง\\หน้าต่างข้อความยืนยัน\\การลบ\\\\
-                                                      6.ระบบทำการลบหมวดหมู่ข้อสอบที่ผู้ใช้ต้องการลบ\\
+                                                      6.ระบบทำการลบหมวดหมู่คำถามที่ผู้ใช้ต้องการลบ\\
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
   \hline
   \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
                                                           - ผู้ใช้ไม่ทำการยืนยันการลบ\\
-                                                          - หมวดหมู่ข้อสอบที่ต้องการลบ ถูกใช้งานอยู่ในข้อสอบ ทำให้ไม่\\
+                                                          - หมวดหมู่คำถามที่ต้องการลบ ถูกใช้งานอยู่ในข้อสอบ ทำให้ไม่\\
                                                           \hspace{0.22cm}สามารถลบได้
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส ลบหมวดหมู่ข้อสอบของผู้ใช้}
+  \caption{รายละเอียดยูสเคส ลบหมวดหมู่คำถามของผู้ใช้}
   \label{Table:deleteCategory}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส ดูหมวดหมู่ข้อสอบสาธารณะ}
+\subsubsection{รายละเอียดยูสเคส ดูหมวดหมู่คำถามสาธารณะ}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{8}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{ดูหมวดหมู่ข้อสอบสาธารณะ}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูหมวดหมู่คำถามสาธารณะ}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูหมวดหมู่ข้อสอบสาธารณะ}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูหมวดหมู่คำถามสาธารณะ}\\ 
   \hline
   \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          - เมื่อผู้ใช้ต้องการดูหมวดหมู่ข้อสอบสาธารณะ\\
-                                                          - เมื่อผู้ใช้ต้องการนำหมวดหมู่ข้อสอบสาธารณะไปใช้ในข้อสอบ\\
+                                                          - เมื่อผู้ใช้ต้องการดูหมวดหมู่คำถามสาธารณะ\\
+                                                          - เมื่อผู้ใช้ต้องการนำหมวดหมู่คำถามสาธารณะไปใช้ในข้อสอบ\\
                                                           \hspace{0.22cm}ของตนเอง
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้ดูว่ามีหมวดหมู่ข้อสอบสาธารณะใดบ้างที่อยู่ใน\\ระบบและสามารถคัดลอกไปใช้ได้\end{tabular}}}\\[-\rowheight]
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้ดูว่ามีหมวดหมู่คำถามสาธารณะใดบ้างที่อยู่ใน\\ระบบและสามารถคัดลอกไปใช้ได้\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
@@ -466,7 +469,7 @@
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูหมวดหมู่\\ข้อสอบสาธารณะ\\\\\\
+                                                      1.ไปที่หน้าดูหมวดหมู่\\คำถามสาธารณะ\\\\\\
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\\\
@@ -476,40 +479,40 @@
   \hline
   \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          ไม่มีหมวดหมู่ข้อสอบที่เป็นสาธารณะอยู่ในระบบ
+                                                          ไม่มีหมวดหมู่คำถามที่เป็นสาธารณะอยู่ในระบบ
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส ดูหมวดหมู่ข้อสอบสาธารณะ}
+  \caption{รายละเอียดยูสเคส ดูหมวดหมู่คำถามสาธารณะ}
   \label{Table:viewPublicCategorires}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส ดูรายละเอียดของหมวดหมู่ข้อสอบสาธารณะ}
+\subsubsection{รายละเอียดยูสเคส ดูรายละเอียดของหมวดหมู่คำถามสาธารณะ}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{9}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{ดูรายละเอียดของหมวดหมู่ข้อสอบสาธารณะ}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูรายละเอียดของหมวดหมู่คำถามสาธารณะ}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูรายละเอียดในหมวดหมู่ข้อสอบสาธารณะที่ต้องการ}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูรายละเอียดในหมวดหมู่คำถามสาธารณะที่ต้องการ}\\ 
   \hline
   \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          - เมื่อผู้ใช้ต้องการดูรายละเอียดของหมวดหมู่ข้อสอบสาธารณะ\\
-                                                          - เมื่อผู้ใช้ต้องการนำหมวดหมู่ข้อสอบสาธารณะนั้นๆไปใช้ใน\\
+                                                          - เมื่อผู้ใช้ต้องการดูรายละเอียดของหมวดหมู่คำถามสาธารณะ\\
+                                                          - เมื่อผู้ใช้ต้องการนำหมวดหมู่คำถามสาธารณะนั้นๆไปใช้ใน\\
                                                           \hspace{0.22cm}ข้อสอบของตนเอง
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้ดูรายละเอียดของหมวดหมู่ข้อสอบสาธารณะ ว่าใน\\หมวดหมู่นั้นมีคำถามอะไรบ้าง\end{tabular}}}\\[-\rowheight]
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้ดูรายละเอียดของหมวดหมู่คำถามสาธารณะ ว่าใน\\หมวดหมู่นั้นมีคำถามอะไรบ้าง\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
   \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ดูหมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ดูหมวดหมู่คำถามสาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
@@ -523,50 +526,50 @@
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูหมวดหมู่\\ข้อสอบสาธารณะ\\\\\\
-                                                      3.คลิกหมวดหมู่ที่ต้องการดูรายละเอียด\\
+                                                      1.ไปที่หน้าดูหมวดหมู่\\คำถามสาธารณะ\\\\\\
+                                                      3.คลิกหมวดหมู่ที่ต้องการ\\ดูรายละเอียด\\
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\\\
                                                       2.ระบบแสดงหมวดหมู่\\ทั้งหมดที่เป็นสาธารณะ\\\\\\
-                                                      4.ระบบแสดงรายละเอียด\\ของหมวดหมู่ข้อสอบนั้น
+                                                      4.ระบบแสดงรายละเอียด\\ของหมวดหมู่คำถามนั้น
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
   \hline
   \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          ไม่มีหมวดหมู่ข้อสอบที่เป็นสาธารณะอยู่ในระบบ
+                                                          ไม่มีหมวดหมู่คำถามที่เป็นสาธารณะอยู่ในระบบ
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส ดูรายละเอียดของหมวดหมู่ข้อสอบสาธารณะ}
+  \caption{รายละเอียดยูสเคส ดูรายละเอียดของหมวดหมู่คำถามสาธารณะ}
   \label{Table:viewPublicCategoriryDetails}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส คัดลอกหมวดหมู่ข้อสอบสาธารณะ}
+\subsubsection{รายละเอียดยูสเคส คัดลอกหมวดหมู่คำถามสาธารณะ}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
   Use Case No:                                      & \multicolumn{2}{l|}{10}\\ 
   \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{คัดลอกหมวดหมู่ข้อสอบสาธารณะ}\\
+  Use Case Name:                                    & \multicolumn{2}{l|}{คัดลอกหมวดหมู่คำถามสาธารณะ}\\
   \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการนำหมวดหมู่ข้อสอบสาธารณะ}\\ 
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการนำหมวดหมู่คำถามสาธารณะ}\\ 
   \hline
   \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          เมื่อผู้ใช้ต้องการนำหมวดหมู่ข้อสอบสาธารณะนั้นๆ ไปใช้ในข้อ\\สอบของตนเอง
+                                                          เมื่อผู้ใช้ต้องการนำหมวดหมู่คำถามสาธารณะนั้นๆ ไปใช้ในข้อ\\สอบของตนเอง
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้ทำการคัดลอกหมวดหมู่ข้อสอบสาธารณะ ไปใช้ใน\\ข้อสอบของตนเอง\end{tabular}}}\\[-\rowheight]
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}สำหรับให้ผู้ใช้ทำการคัดลอกหมวดหมู่คำถามสาธารณะ ไปใช้ใน\\ข้อสอบของตนเอง\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
   \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ดูหมวดหมู่ข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ดูหมวดหมู่คำถามหมวดหมู่คำถามสาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
@@ -574,30 +577,30 @@
   \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ผู้ใช้ต้องทำการเข้าสู่ระบบ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
-  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการคักลอกหมวดหมู่สาธารณะที่ผู้ใช้ต้องการ ไปเก็บใน\\หมวดหมู่ข้อสอบของตนเอง\end{tabular}}}\\[-\rowheight]
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการคักลอกหมวดหมู่สาธารณะที่ผู้ใช้ต้องการ ไปเก็บใน\\หมวดหมู่คำถามของตนเอง\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูหมวดหมู่\\ข้อสอบสาธารณะ\\\\\\
+                                                      1.ไปที่หน้าดูหมวดหมู่\\คำถามสาธารณะ\\\\\\
                                                       3.คลิกปุ่มคัดลอกที่หมวด\\หมู่ที่ต้องการ\\\\\\\\\\
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\\\
                                                       2.ระบบแสดงหมวดหมู่\\ทั้งหมดที่เป็นสาธารณะ\\\\\\
-                                                      4.ระบบทำการคัดลอกข้อมูลสาธารณะที่ต้องการ ไปเก็บในหมวดหมู่ข้อสอบของตน\\เอง
+                                                      4.ระบบทำการคัดลอกข้อมูลสาธารณะที่ต้องการ ไปเก็บในหมวดหมู่คำถามของตน\\เอง
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
   \hline
   \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          ไม่มีหมวดหมู่ข้อสอบที่เป็นสาธารณะอยู่ในระบบ
+                                                          ไม่มีหมวดหมู่คำถามที่เป็นสาธารณะอยู่ในระบบ
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   \end{tabular}
-  \caption{รายละเอียดยูสเคส คัดลอกหมวดหมู่ข้อสอบสาธารณะ}
+  \caption{รายละเอียดยูสเคส คัดลอกหมวดหมู่คำถามสาธารณะ}
   \label{Table:copyPublicCategory}
 \end{table}
 
@@ -631,7 +634,7 @@
   \hline
   Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
   \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่ของข้อสอบ, คัดลอกหมวดหมู่ข้อสอบ\\สาธารณะ\end{tabular}}}\\[-\rowheight]
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างหมวดหมู่คำถาม, คัดลอกหมวดหมู่คำถาม\\สาธารณะ\end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
   Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
@@ -639,8 +642,8 @@
   \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
                                                           - ผู้ใช้ต้องทำการเข้าสู่ระบบ\\
-                                                          - ผู้ใช้งานต้องสร้างหมวดหมู่ข้อสอบของตนเอง หรือคัดลอก\\
-                                                          \hspace{0.22cm}หมวดหมู่ข้อสอบสาธารณะ
+                                                          - ผู้ใช้งานต้องสร้างหมวดหมู่คำถามของตนเอง หรือคัดลอก\\
+                                                          \hspace{0.22cm}หมวดหมู่คำถามสาธารณะ
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
@@ -651,7 +654,7 @@
   \cline{2-3}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       1.ไปที่หน้าสร้างข้อสอบ\\\\\\\\\\
-                                                      3.เลือกหมวดหมู่ข้อสอบที่\\ต้องการ แล้วเลือกระดับ\\ความยากและจำนวนข้อที่\\ต้องการในหมวดหมู่นั้นๆ\\ แล้วคลิกสร้างข้อสอบ\\\\\\
+                                                      3.เลือกหมวดหมู่คำถามที่\\ต้องการ แล้วเลือกระดับ\\ความยากและจำนวนข้อที่\\ต้องการในหมวดหมู่นั้นๆ\\ แล้วคลิกสร้างข้อสอบ\\\\\\
                                                       \end{tabular}}
                                                     & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
                                                       \\
@@ -662,7 +665,7 @@
   \hline
   \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          - ไม่มีหมวดหมู่ข้อสอบของตนเอง\\
+                                                          - ไม่มีหมวดหมู่คำถามของตนเอง\\
                                                           - ผู้ใช้กรอกรายละเอียดไม่ครบถ้วน หรือไม่ตรงเงื่อนไข
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
@@ -753,7 +756,7 @@
   \hline
   \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          สำหรับผู้ใช้ที่ต้องการแก้ไขข้อสอบ เช่น เพิ่มหรือลดจำนวนข้อและ\\ระดับความยากในหมวดหมู่ของข้อสอบนั้นๆ
+                                                          สำหรับผู้ใช้ที่ต้องการแก้ไขข้อสอบ เช่น เพิ่มหรือลดจำนวนข้อและ\\ระดับความยากในหมวดหมู่คำถามนั้นๆ
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
@@ -822,7 +825,7 @@
   \hline
   \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
                                                         \begin{tabular}[b]{@{}l@{}}
-                                                          สำหรับผู้ใช้ที่ต้องการแก้ไขรายละเอียดข้อสอบ เช่น เพิ่มหรือลด\\จำนวนข้อและระดับความยากในหมวดหมู่ของข้อสอบนั้นๆ
+                                                          สำหรับผู้ใช้ที่ต้องการแก้ไขรายละเอียดข้อสอบ เช่น เพิ่มหรือลด\\จำนวนข้อและระดับความยากในหมวดหมู่คำถามนั้นๆ
                                                         \end{tabular}}}\\[-\rowheight]
   \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
   \hline
@@ -871,78 +874,12 @@
   \label{Table:editMyExam}
 \end{table}
 
-\subsubsection{รายละเอียดยูสเคส คัดลอกข้อสอบของตนเอง}
-
-\begin{table}[H]
-  \begin{tabular}{|l|l|l|} 
-  \hline
-  Use Case No:                                      & \multicolumn{2}{l|}{14}\\ 
-  \hline
-  Use Case Name:                                    & \multicolumn{2}{l|}{คัดลอกข้อสอบของตนเอง}\\
-  \hline
-  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการคัดลอกข้อสอบของตนเอง}\\ 
-  \hline
-  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
-                                                        \begin{tabular}[b]{@{}l@{}}
-                                                          เมื่อผู้ใช้ต้องการแก้ไขรายละเอียดข้อของสอบที่ถูกส่งให้ผู้สมัครงาน\\แล้ว ทำให้ไม่สามารถแก้ไขรายละเอียดของข้อสอบเดิมได้ หรือต้อง\\การคัดลอกข้อสอบมาแก้ไข โดยที่ไม่ต้องการให้กระทบข้อสอบเดิม
-                                                        \end{tabular}}}\\[-\rowheight]
-  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
-  \hline
-  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
-                                                        \begin{tabular}[b]{@{}l@{}}
-                                                          สำหรับให้ผู้ใช้งานคัดลอกข้อสอบของตนเอง
-                                                        \end{tabular}}}\\[-\rowheight]
-  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
-  \hline
-  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
-  \hline
-  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างข้อสอบ, คัดลอกข้อสอบจากสาธารณะ\end{tabular}}}\\[-\rowheight]
-  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
-  \hline
-  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
-  \hline
-  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
-                                                        \begin{tabular}[b]{@{}l@{}}
-                                                          - ผู้ใช้ต้องทำการเข้าสู่ระบบ\\
-                                                          - ผู้ใช้ต้องสร้างข้อสอบ หรือคัดลอกข้อสอบจากข้อสอบสาธารณะ
-                                                        \end{tabular}}}\\[-\rowheight]
-  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
-  \hline
-  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการคัดลอกข้อสอบที่ผู้ใช้ต้องการ\end{tabular}}}\\[-\rowheight]
-  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
-  \hline
-  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
-  \cline{2-3}
-                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      1.ไปที่หน้าดูข้อสอบทั้งหมดของตนเอง\\\\\\
-                                                      3.คลิกปุ่มคักลอกที่ข้อสอบ\\ที่ต้องการคัดลอก\\\\\\
-                                                      5.ผู้ใช้งานกดยืนยันการคัด\\ลอก\\\\\\
-                                                      \end{tabular}}
-                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
-                                                      \\\\
-                                                      2.ระบบแสดงข้อสอบทั้ง\\หมดของผู้ใช้\\\\\\
-                                                      4.ระบบแสดงหน้ายืนยันการ\\คัดลอก\\\\\\
-                                                      6.ระบบทําการคัดลอก\\หมวดหมู่ข้อสอบนั้น
-                                                      \end{tabular}}\\[-\rowheight]
-                                                    & \printcelltop & \printcelltop\\ 
-  \hline
-  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
-                                                        \begin{tabular}[b]{@{}l@{}}
-                                                          ผู้ใช้ไม่มีข้อสอบ
-                                                        \end{tabular}}}\\[-\rowheight]
-  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
-  \hline
-  \end{tabular}
-  \caption{รายละเอียดยูสเคส คัดลอกข้อสอบของตนเอง}
-  \label{Table:copyMyExam}
-\end{table}
-
 \subsubsection{รายละเอียดยูสเคส ลบข้อสอบ}
 
 \begin{table}[H]
   \begin{tabular}{|l|l|l|} 
   \hline
-  Use Case No:                                      & \multicolumn{2}{l|}{15}\\ 
+  Use Case No:                                      & \multicolumn{2}{l|}{14}\\ 
   \hline
   Use Case Name:                                    & \multicolumn{2}{l|}{ลบข้อสอบ}\\
   \hline
@@ -989,7 +926,7 @@
                                                       \\\\
                                                       2.ระบบแสดงข้อสอบทั้ง\\หมดของผู้ใช้\\\\
                                                       4.ระบบทำการแสดงหน้า\\ต่างข้อความยืนยันการลบ\\\\\\
-                                                      6.ระบบทําการคัดลอก\\หมวดหมู่ข้อสอบนั้น
+                                                      6.ระบบทําการคัดลอก\\หมวดหมู่คำถามนั้น
                                                       \end{tabular}}\\[-\rowheight]
                                                     & \printcelltop & \printcelltop\\ 
   \hline
@@ -1003,4 +940,393 @@
   \end{tabular}
   \caption{รายละเอียดยูสเคส ลบข้อสอบ}
   \label{Table:deleteExam}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ดูข้อสอบสาธารณะ}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{15}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูข้อสอบสาธารณะ}\\
+  \hline
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูข้อสอบสาธารณะ}\\ 
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้มีความต้องการที่จะดูข้อสอบสาธารณะ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับผู้ใช้ที่ต้องการดูว่ามีข้อสอบอะไรบ้างที่เปิดเป็นสาธาณะ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้ใช้ต้องทำการเข้าสู่ระบบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการแสดงข้อสอบที่เป็นสาธารณะทั้งหมด\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าข้อสอบ\\สาธารณะ\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงข้อสอบ\\ทั้งหมดที่เป็นสาธารณะ
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ไม่มีข้อสอบสาธารณะอยู่ในระบบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ดูข้อสอบสาธารณะ}
+  \label{Table:viewPublicExams}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ดูรายละเอียดของข้อสอบสาธารณะ}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{16}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูรายละเอียดของข้อสอบสาธารณะ}\\
+  \hline
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูรายละเอียดของข้อสอบสาธารณะ}\\ 
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - เมื่อผู้ใช้มีความต้องการที่จะดูรายละเอียดของข้อสอบสาธารณะ\\\hspace{0.22cm} เพื่อที่จะนำไปเป็นแนวทางในข้อสอบของตนเอง\\
+                                                          - ผู้ใช้ต้องการทำการคัดลอกข้อสอบสาธารณะ ไปปรับแต่งหรือ\\\hspace{0.22cm}นำไปใช้กับผู้สมัครสอบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้ใช้ดูว่ามีข้อสอบสาธารณะใดบ้างที่อยู่ในระบบ และ\\สามารถคัดลอกไปใช้ได้
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้ใช้ต้องทำการเข้าสู่ระบบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการแสดงรายละเอียดของข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าข้อสอบ\\สาธารณะ\\\\\\
+                                                      3.คลิกดูข้อสอบที่ต้องการดู\\รายละเอียด\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงข้อสอบ\\ทั้งหมดที่เป็นสาธารณะ\\\\\\
+                                                      4.ระบบแสดงรายละเอียด\\ข้อสอบ
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ไม่มีข้อสอบสาธารณะอยู่ในระบบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ดูข้อสอบสาธารณะ}
+  \label{Table:viewPublicExamDetails}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส คัดลอกข้อสอบสาธารณะ}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{17}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{คัดลอกข้อสอบสาธารณะ}\\
+  \hline
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการคัดลอกข้อสอบสาธารณะ}\\ 
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้มีความต้องการที่จะนำข้อสอบสาธารณะไปใช้ หรือนำไป\\ปรับแก้ เพื่อนำไปใช้กับผู้สมัครงาน
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้ใช้คัดลอกข้อสอบไปใช้ หรือนำไปปรับแก้ไขตามที่\\ผู้ใช้ต้องการ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ดูข้อสอบสาธารณะ \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้ใช้ต้องทำการเข้าสู่ระบบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการคัดลอกข้อสอบสาธารณะที่ผู้ใช้ต้องการ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าข้อสอบ\\สาธารณะ\\\\\\
+                                                      3.คลิกดูข้อสอบที่ต้องการดู\\รายละเอียด\\\\\\
+                                                      5.ผู้ใช้ทำการยืนยันการคัด\\ลอกข้อสอบ\\\\\\\\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงข้อสอบ\\ทั้งหมดที่เป็นสาธารณะ\\\\\\
+                                                      4.ระบบแสดงหน้าต่างยืนยันการคัดลอก\\\\\\
+                                                      6.ระบบทำการคัดลอก\\ข้อสอบที่ผู้ใช้ต้องการ และหมวดหมู่คำถามทั้งหมดที่\\ใช้ในข้อสอบนั้น ไปเก็บไว้ในข้อสอบของตนเองและ\\หมวดหมู่คำถามของตนเอง
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ไม่มีข้อสอบสาธารณะอยู่ในระบบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส คัดลอกข้อสอบสาธารณะ}
+  \label{Table:copyPublicExam}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ส่งข้อสอบให้ผู้สมัครงาน}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{18}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ส่งข้อสอบให้ผู้สมัครงาน}\\
+  \hline
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้งานต้องการส่งข้อสอบให้ผู้สมัครทำ}\\ 
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้สร้างข้อสอบเรียบร้อยแล้ว หรือไปทำการคัดลอกข้อสอบ\\มาจากสาธารณะ แล้วต้องการส่งข้อสอบให้ผู้สมัครงานทำ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้ใช้ส่งข้อสอบให้ผู้สมัครงานผ่านทางอีเมล
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, สร้างข้อสอบ, คัดลอกข้อสอบสาธารณะ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - ผู้ใช้ต้องทำการเข้าสู่ระบบ\\
+                                                          - ผู้ใช้ต้องทำการสร้างข้อสอบ หรือคัดลอกข้อสอบจากข้อสอบ\\
+                                                          \hspace{0.22cm}สาธารณะ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการส่งข้อสอบให้ผู้สมัครงานผ่านอีเมล\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าข้อสอบของ\\ตนเอง\\\\\\
+                                                      3.คลิกปุ่มส่งข้อสอบบริเวณข้อสอบที่ต้องการส่ง\\\\\\\\\\\\
+                                                      5.กรอกรายละเอียดแล้วคลิกส่งข้อสอบให้ผู้สมัคร\\\\\\\\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงข้อสอบ\\ทั้งหมดของผู้ใช้\\\\\\
+                                                      4.ระบบแสดงกรอบหน้าต่างให้ใส่รายละเอียดผู้สมัคร\\งาน เช่น อีเมลผู้สมัคร, ระยะเวลาในการทำข้อสอบ และวันหมดอายุของข้อสอบ\\\\\\
+                                                      6.ระบบทำการสุ่มคำถาม\\จากหมวดหมู่คำถาม ที่\\กำหนดจำนวนข้อและ\\ความยากโดยรายละเอียด\\ของข้อสอบ แล้วส่งให้ผู้\\สมัครงานผ่านอีเมล
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          กรอกข้อมูลไม่ครบ หรือไม่ตรงตามเงี่อนไข
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ส่งข้อสอบให้ผู้สมัครงาน}
+  \label{Table:sendExam}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ดูประวัติการส่งข้อสอบทั้งหมด}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{19}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูประวัติการส่งข้อสอบทั้งหมด}\\
+  \hline
+  Use Case~Scenario:                                & \multicolumn{2}{l|}{ผู้ใช้ต้องการดูประวัติการส่งข้อสอบ}\\ 
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้ส่งข้อสอบ แล้วต้องการดูประวัติการส่งข้อสอบที่ผู้ใช้ได้\\ส่งไปให้พนักงานทำ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้ใช้ที่ต้องการทราบประวัติการส่งข้อสอบของตนเอง
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ส่งข้อสอบให้ผู้สมัคร\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - ผู้ใช้ต้องทำการเข้าสู่ระบบ\\
+                                                          - ผู้ใช้ต้องทำการส่งข้อสอบให้ผู้สมัคร
+                                                          \hspace{0.22cm}สาธารณะ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการแสดงประวัติการส่งข้อสอบที่ผู้ใช้ทำการส่งให้ผู้สมัคร\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าของประวัติการ\\ส่งข้อสอบ\\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงประวัติข้อ\\สอบทั้งหมดที่ผู้ใช้ทำการ\\ส่งให้ผู้สมัครงาน
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ไม่มีการส่งข้อสอบให้ผู้สมัครงาน
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ดูประวัติการส่งข้อสอบทั้งหมด}
+  \label{Table:viewSentExams}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ดูรายละเอียดประวัติการส่งข้อสอบ}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{20}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูรายละเอียดประวัติการส่งข้อสอบ}\\
+  \hline
+  \vcell{Use Case~Scenario:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้ส่งข้อสอบให้ผู้สมัครงานทำ แล้วต้องการดูรายละเอียดว่า\\ส่งให้ผู้สมัตรงานคนไหน และส่งไปเมื่อไหร่
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้งานส่งข้อสอบให้ผู้สมัครทำ แล้วต้องการดูรายละเอียด\\ของการส่งข้อสอบให้ผู้สมัครงาน
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้ใช้ที่ต้องการทราบประวัติการส่งข้อสอบให้ผู้สมัคร \\เช่นส่งให้ผู้สมัครคนไหนบ้าง, ให้เวลาในการทำเท่าไหร่ และกำ\\หนดวัน
+                                                          หมดอายุไว้วันไหน
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ส่งข้อสอบให้ผู้สมัคร\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - ผู้ใช้ต้องทำการเข้าสู่ระบบ\\
+                                                          - ผู้ใช้ต้องทำการส่งข้อสอบให้ผู้สมัคร
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการแสดงรายละเอียดของประวัติข้อสอบที่มีการส่งให้\\ผู้สมัคร\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าของประวัติการ\\ส่งข้อสอบ\\\\\\\\
+                                                      3.คลิกประวัติการส่งข้อสอบที่ต้องการดูรายละเอียด\\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงประวัติข้อ\\สอบทั้งหมดที่ผู้ใช้ทำการส่งให้ผู้สมัครงาน\\\\\\
+                                                      4.ระบบทำการแสดงรายละ\\เอียดประวัติข้อสอบที่ต้อง\\การ
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ไม่มีการส่งข้อสอบให้ผู้สมัครงาน
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ดูรายละเอียดประวัติการส่งข้อสอบ}
+  \label{Table:viewSentExamDetail}
 \end{table}
