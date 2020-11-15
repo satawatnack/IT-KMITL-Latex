@@ -26,7 +26,7 @@
   \item ผู้ใช้งานสามารถสร้างคำถามประเภท ปรนัย, อัตนัย และคำถามที่มีไฟล์แนบได้
   \item คำถามที่เป็นปรนัย สามารถเลือกให้มีข้อถูกมากกว่า 1 ข้อได้
   \item สามารถใส่รูปภาพเพิ่มในตัวเลือกคำตอบของคำถามประเภทปรนัยได้
-  \item หากผู้ใช้งานส่งข้อสอบให้ผู้สมัครงานทำแล้ว ถ้าหมวดหมู่คำถามนั้นถูกใช้งานในข้องสอบ คำถามในหมวดหมู่นั้นจะสามารถแก้ไขได้เฉพาะเฉลยเท่านั้น ไม่สามารถแข้ไขคำถามได้ โดยหากต้องการแก้ไขให้ทำการคัดลอกหมวดหมู่คำถามของตนเองมาแก้ไขเป็นหมวดหมู่ใหม่
+  \item หากผู้ใช้งานส่งข้อสอบให้ผู้สมัครงานทำแล้ว ถ้าหมวดหมู่คำถามนั้นถูกใช้งานในข้อสอบ คำถามในหมวดหมู่นั้นจะสามารถแก้ไขได้เฉพาะเฉลยเท่านั้น ไม่สามารถแข้ไขคำถามได้ โดยหากต้องการแก้ไขให้ทำการคัดลอกหมวดหมู่คำถามของตนเองมาแก้ไขเป็นหมวดหมู่ใหม่
   \item ผู้ใช้งานสามารถคัดลอกหมวดหมู่คำถามของตนเองได้
   \item ผู้ใช้งานสามารถเปิดหมวดหมู่คำถามให้เป็นสาธารณะได้
   \item หมวดหมู่คำถามที่เป็นสาธารณะ ผู้ที่ไม่ใช้เจ้าของไม่สามารถแก้ไขได้ โดยผู้ใช้สามารถคัดลอกหมวดหมู่คำถามที่เป็นสาธารณะไปเป็นเป็นของตนเองได้ หากผู้ใช้ไม่ใช้เจ้าของแต่ต้องการแก้ไข
@@ -37,8 +37,9 @@
   \item ผู้ใช้สามารถค้นหาข้อสอบได้
   \item ผู้ใช้สามารถเปิดข้อสอบให้เป็นสาธารณะได้
   \item ข้อสอบที่เป็นสาธารณะ ผู้ที่ไม่ใช้เจ้าของไม่สามารถแก้ไขได้ โดยผู้ใช้สามารถคัดลอกข้อสอบสาธารณะไปเป็นเป็นของตนเองได้ หากผู้ใช้ไม่ใช้เจ้าของแต่ต้องการแก้ไข
-  \item หากผู้ใช้งานส่งข้อสอบให้ผู้สมัครงานทำแล้ว ข้อสอบนั้นจะไม่สามารถแก้ไขได้
-  \item ผู้ใช้สามารถกำหนดระยะเวลาในการทำข้อสอบได้
+  \item หากผู้ใช้งานส่งข้อสอบให้ผู้สมัครงานทำแล้ว ข้อสอบที่ผู้ใช้งานสร้างขึ้นนั้นจะไม่สามารถแก้ไขได้ แต่สามารถส่งให้ผู้สมัครงานคนอื่นทำต่อไปได้ โดยระบบจะทำการสุ่มคำถามที่ผู้ออกข้อสอบกำหนด จำนวนข้อประเภทคำถาม และระดับความยาก
+  \item ผู้ใช้งานสามารถดูประวัติที่ผู้ใช้ทำการส่งข้อสอบให้ผู้สมัครงานได้
+  \item ผู้ใช้สามารถกำหนดระยะเวลาการทำข้อสอบได้
   \item ผู้ใช้สามารถกำหนดวันหมดอายุของข้อสอบได้
   \item ผู้ใช้สามารถส่งข้อสอบให้ผู้สมัครงานผ่านอีเมลได้
   \item ผู้ทำข้อสอบสามารถเข้ามาทำข้อสอบในเว็บแอพพลิเคชั่นได้ตลอด หากเวลาในการทำข้อสอบยังไม่หมด
@@ -1329,4 +1330,432 @@
   \end{tabular}
   \caption{รายละเอียดยูสเคส ดูรายละเอียดประวัติการส่งข้อสอบ}
   \label{Table:viewSentExamDetail}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส รายละเอียดข้อสอบ}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{21}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{รายละเอียดข้อสอบ}\\
+  \hline
+  \vcell{Use Case~Scenario:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้สมัครงานอ่านรายละเอียดก่อนที่จะทำข้อสอบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้สมัครงานได้รับลิงค์สำหรับทำข้อสอบผ่านทางอีเมล
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เพื่อให้ผู้ใช้ดูรายละเอียดก่อนที่จะเริ่มทำข้อสอบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{ผู้สมัครงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ส่งข้อสอบให้ผู้สมัคร\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้สมัครต้องทำการเข้าอีเมลเพื่อเปิดลิงค์ที่ทางบริษัทได้ทำการส่งมา
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการแสดงรายละเอียดข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.คลิกที่ลิงค์ในอีเมลที่ได้รับจากทางบริษัท\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบทำการแสดงราย\\ละเอียดข้อสอบ
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส รายละเอียดข้อสอบ}
+  \label{Table:examDetails}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส เริ่มทำข้อสอบ}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{22}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{เริ่มทำข้อสอบ}\\
+  \hline
+  \vcell{Use Case~Scenario:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้สมัครกดเริ่มทำข้อสอบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อสมัครงานต้องการเริ่มทำข้อสอบ หลังจากที่ดูรายละเอียดของ\\ข้อสอบแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้สมัครงานทำข้อสอบที่ได้รับมาจากทางบริษัท
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{ผู้สมัครงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}รายละเอียดข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้สมัครต้องทำการเข้าอีเมลเพื่อเปิดลิงค์ที่ทางบริษัทได้ทำการส่งมา
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบแสดงข้อสอบให้ผู้สมัครและเริ่มจับเวลาในการทำข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.คลิกเริ่มทำข้อสอบ\\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\
+                                                      2.ระบบแสดงข้อสอบให้ผู้สมัครและเริ่มจับเวลาในการทำข้อสอบ
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - ผู้สมัครส่งข้อสอบไปแล้ว จึงไม่สามารถทำใหม่อีกครั้งได้\\
+                                                          - ข้อสอบหมดอายุการใช้งานแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส รายละเอียดข้อสอบ}
+  \label{Table:doExam}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ส่งข้อสอบให้ทางบริษัท}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{23}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ส่งข้อสอบให้ทางบริษัท}\\
+  \hline
+  \vcell{Use Case~Scenario:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้สมัครงานทำการส่งข้อสอบกลับไปให้ทางบริษัท
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้สมัครงานทำข้อสอบเสร็จแล้ว และต้องการส่งข้อสอบให้\\ทางบริษัท
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้สมัครงานทำการส่งข้อสอบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{ผู้สมัครงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เริ่มทำข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้สมัครต้องทำการกดเริ่มทำข้อสอบ ที่ทางบริษัทส่งมา
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการส่งข้อสอบให้ทางบริษัท\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.คลิกส่งข้อสอบ\\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\
+                                                      2.ระบบทำการส่งข้อสอบให้ทางบริษัท
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - ผู้สมัครส่งข้อสอบไปแล้ว จึงไม่สามารถทำใหม่อีกครั้งได้\\
+                                                          - ข้อสอบหมดอายุการใช้งานแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ส่งข้อสอบให้ทางบริษัท}
+  \label{Table:sendExamToCompany}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส หมดเวลาทำข้อสอบ}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{24}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{หมดเวลาทำข้อสอบ}\\
+  \hline
+  \vcell{Use Case~Scenario:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้สมัครงานทำข้อสอบเกินเวลาที่กำหนด
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้สมัครงานทำข้อสอบอยู่แล้วหมดเวลาทำข้อสอบ โดยที่ยัง\\ไม่ได้ทำการส่งข้อสอบ
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับกรณีที่ผู้สมัครทำข้อสอบไม่ทันในเวลาที่กำหนด
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{ผู้สมัครงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เริ่มทำข้อสอบ\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้ใช้ต้องคลิกเริ่มทำข้อสอบ และทำจนหมดเวลาโดยที่ยังไม่ได้ส่ง
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการส่งข้อสอบให้ทางบริษัท\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ระบบตรวจพบว่าหมด\\เวลาในการทำข้อสอบ แล้วทำการส่งข้อสอบให้ทาง\\บริษัท
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          -
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส หมดเวลาทำข้อสอบ}
+  \label{Table:examTimeOver}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ดูข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{25}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ดูข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว}\\
+  \hline
+  \vcell{Use Case~Scenario:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้ใช้ดูข้อว่ามีผู้สมัครงานคนไหนทำข้อสอบเสร็จแล้วบ้าง
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้ต้องการดูว่าผู้สมัครงานคนไหนทำข้อสอบเสร็จแล้วบ้าง
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับกรณีที่ผู้ใช้ต้องการดูว่าผู้สมัครงานคนไหนทำข้อสอบ\\เสร็จแล้วบ้าง
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ส่งข้อสอบให้ทางบริษัท\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - ผู้ใช้ต้องทำการเข้าสู่ระบบ\\
+                                                          - ผู้ใช้ต้องทำการส่งข้อสอบให้ผู้สมัครงาน\\
+                                                          - ผู้สมัครงานต้องส่งข้อสอบให้บริษัทเรียบร้อยแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการแสดงข้อสอบทั้งหมดที่ผู้สมัครงานทำเสร็จแล้ว\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าข้อสอบที่ทำเสร็จแล้ว\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงข้อสอบ\\ทั้งหมดที่ผู้สมัครทำเสร็จ\\แล้ว
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ไมมีข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ดูข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว}
+  \label{Table:viewFinishedExams}
+\end{table}
+
+\subsubsection{รายละเอียดยูสเคส ตรวจสอบข้อสอบที่ผู้สมัครทำเสร็จแล้ว}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|} 
+  \hline
+  Use Case No:                                      & \multicolumn{2}{l|}{26}\\ 
+  \hline
+  Use Case Name:                                    & \multicolumn{2}{l|}{ตรวจสอบข้อสอบที่ผู้สมัครทำเสร็จแล้ว}\\
+  \hline
+  \vcell{Use Case~Scenario:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ผู้ใช้ตรวจข้อสอบที่ผู้สมัครเสร็จแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Triggering Event:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          เมื่อผู้ใช้ต้องการตรวจข้อสอบที่มีคำถามประเภทอัตนัย และคำถาม\\ที่มีไฟล์แนบ ซึ่งไม่มีคำตอบที่ตายตัว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Brief Description:}                        & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          สำหรับให้ผู้ใช้ตรวจข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Actors:                                           & \multicolumn{2}{l|}{พนักงาน}\\ 
+  \hline
+  \vcell{Related Use Cases:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}เข้าสู่ระบบ, ส่งข้อสอบให้ทางบริษัท\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Stakeholders:                                     & \multicolumn{2}{l|}{-}\\ 
+  \hline
+  \vcell{Pre - Conditions:}                         & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          - ผู้ใช้ต้องทำการเข้าสู่ระบบ\\
+                                                          - ผู้ใช้ต้องทำการส่งข้อสอบให้ผู้สมัครงาน\\
+                                                          - ผู้สมัครงานต้องส่งข้อสอบให้บริษัทเรียบร้อยแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \vcell{Post - Conditions:}                        & \multicolumn{2}{l|}{\vcell{\begin{tabular}[b]{@{}l@{}}ระบบทำการบัททึกคะแนน\end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  Flow of Events:                                   & \multicolumn{1}{c|}{ผู้ใช้} & \multicolumn{1}{c|}{ระบบ}\\  
+  \cline{2-3}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      1.ไปที่หน้าข้อสอบทั้งหมดที่ผู้สมัครงานทำเสร็จแล้ว\\\\\\\\
+                                                      3.คลิกข้อสอบที่ต้องการ\\ทำการตรวจ\\\\\\
+                                                      5.ผู้ใช้ทำการตรวจข้อสอบ\\แล้วคลิกยืนยัน\\\\\\\\
+                                                      \end{tabular}}
+                                                    & \vcell{\begin{tabular}[b]{m{0.28\linewidth}}
+                                                      \\\\
+                                                      2.ระบบแสดงข้อสอบ\\ทั้งหมดที่ผู้สมัครทำเสร็จ\\แล้ว\\\\\\
+                                                      4.ระบบแสดงหน้าตรวจ\\ข้อสอบ\\\\\\
+                                                      6.ระบบทำการบันทึกการ\\ตรวจข้อสอบแล้วสรุปผล\\ออกมาเป็นคะแนน\\
+                                                      \end{tabular}}\\[-\rowheight]
+                                                    & \printcelltop & \printcelltop\\ 
+  \hline
+  \vcell{Exception Conditions:}                     & \multicolumn{2}{l|}{\vcell{
+                                                        \begin{tabular}[b]{@{}l@{}}
+                                                          ไมมีข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว
+                                                        \end{tabular}}}\\[-\rowheight]
+  \printcelltop                                     & \multicolumn{2}{l|}{\printcellmiddle}\\
+  \hline
+  \end{tabular}
+  \caption{รายละเอียดยูสเคส ดูข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว}
+  \label{Table:verifyFinishedExam}
+\end{table}
+
+\section{การออกแบบฐานข้อมูล}
+
+ทางผู้จัดทำได้ใช้ฐานข้อมูลแบบไม่มีโครงสร้าง ในเว็ปแอพพลีเคชั่นนี้ ซึ่งเป็นฐานข้อมูลที่สามาเก็บข้อมูลในปริมาณที่มากได้ สามารถอ่านเขียนข้อมูลได้อย่างรวดเร็ว และสามารถเก็บข้อมูลที่ซับซ้อนได้ ตารางที่ 3.28 แสดงฐานข้อมูลทั้งหมดที่ใช้ในเว็ปแอพพลิเคชั่นนี้
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l|l|} 
+  \hline
+  \multicolumn{1}{|c|}{\textbf{ชื่อตาราง}} & \multicolumn{1}{c|}{\textbf{รายละเอียด}}                                                                                              \\ 
+  \hline
+  \vcell{CATEGORIES}              & \vcell{สำหรับจัดเก็บคำถามตามหมวดหมู่}                                                                                             \\[-\rowheight]
+  \printcelltop                            & \printcellmiddle                                                                                                                      \\ 
+  \hline
+  \vcell{EXAMS}                   & \vcell{\begin{tabular}[b]{@{}l@{}}สำหรับจัดเก็บรายละเอียดการของสุ่มคำถามในข้อสอบ\\ตามที่ผู้ออกข้อสอบกำหนด\end{tabular}}                   \\[-\rowheight]
+  \printcelltop                            & \printcellmiddle                                                                                                                      \\ 
+  \hline
+  \vcell{EXAM\_RANDOMS}           & \vcell{\begin{tabular}[b]{@{}l@{}}จัดเก็บข้อสอบที่ถูกสุ่มคำถามมากจาก หมวดหมู่ต่างๆ \\ตามที่กำหนดอยู่ในรายละเอียดข้อสอบ\end{tabular}}  \\[-\rowheight]
+  \printcelltop                            & \printcellmiddle                                                                                                                      \\ 
+  \hline
+  \vcell{SEND\_EXAMS}             & \vcell{สำหรับจัดเก็บประวัติการส่งข้อสอบ}                                                                                                    \\[-\rowheight]
+  \printcelltop                            & \printcelltop                                                                                                                         \\ 
+  \hline
+  \vcell{USERS}                   & \vcell{สำหรับจัดเก็บข้อมูลผู้ใช้งาน}                                                                                                        \\[-\rowheight]
+  \printcelltop                            & \printcellmiddle                                                                                                                      \\
+  \hline
+  \end{tabular}
+  \caption{ฐานข้อมูลทั้งหมดที่ใช้}
+  \label{Table:noSQLtable}
 \end{table}
