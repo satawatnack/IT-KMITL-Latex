@@ -1770,6 +1770,538 @@
 รายละเอียดของแต่ละเซอร์วิสของเว็บแอพพลิเคชั่นประเมินความสามารถเบื้องต้นของผู้สมัครงาน ที่ทางผู้จัดทำได้พัฒนาขึ้น มีด้วยกันทั้งหมด 6 เซอร์วิสดังต่อไปนี้
 
 \begin{enumerate}
-  \item category service เป็นเชอร์วิสที่จัดการกับหมวดหมู่คำถาม โดยใช้สำหรับเก็บคำถามที่แบ่งตามหมวดหมู่ เพื่อไว้ใช้ในการสุ่มข้อสอบ
-  \item 
+  \item \textbf{user serivce} เป็นเซอร์วิสที่จัดการกับข้อมูลผู้ใช้งาน เพื่อเข้าใช้งานระบบ โดยมีฟังก์ชันต่างๆดังนี้
+    \subitem{- \textbf{create user}} ฟังก์ชันสร้างผู้ใช้งาน เพื่อเข้าใช้งานระบบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/users}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}   & \vcell{user data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{user data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \caption{รายละเอียดฟังก์ชันสร้างผู้ใช้งาน}
+        \label{Table:createUserFunc}
+      \end{table}
+    \subitem{- \textbf{activate user}} ฟังก์ชันยืนยันตัวตนเพื่อเข้าใช้งานระบบ หลังจากที่ทำการสมัครสมาชิก
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/users/activate/\{:activateKey\}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{activateKey(String)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{user data with token}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:activateUserFunc}
+      \end{table}
+    \subitem{- \textbf{login user}} ฟังก์ชันการเข้าสู่ระบบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/users/login}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}   & \vcell{email(String), password(String)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{user data with token}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:loginUserFunc}
+      \end{table}
+      \newpage
+      \subitem{- \textbf{update user}} ฟังก์ชันแก้ใช้ข้อมูลผู้ใช้งาน
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/users}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}   & \vcell{user data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{user data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:updateUserFunc}
+      \end{table}
+    \subitem{- \textbf{logout user}} ฟังก์ชันการออกจากระบบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/users/logout}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{user data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:logoutUserFunc}
+      \end{table}
+    \subitem{- \textbf{logout all user}} ฟังก์ชันการออกจากระบบ ทุกเครื่องที่มีการเข้าสู่ระบบด้วยผู้ใช้เดียวกัน
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/users/logout-all}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{user data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:logoutAllUserFunc}
+      \end{table}
+      \newpage
+    \subitem{- \textbf{delete user}} ฟังก์ชันการลบผู้ใช้งานออกจากระบบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/users/me}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{DELETE}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{user data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:deleteUserFunc}
+      \end{table}
+  \item \textbf{category service} เป็นเชอร์วิสที่จัดการกับหมวดหมู่คำถาม โดยใช้สำหรับเก็บคำถามที่แบ่งตามหมวดหมู่ เพื่อไว้ใช้ในการสุ่มข้อสอบ
+    \subitem{- \textbf{create category}} ฟังก์ชันการสร้างหมวดหมู่คำถาม
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{category data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{category data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:createCategoeyFunc}
+      \end{table}
+    \subitem{- \textbf{upload file}} ฟังก์ชันสำหรับเพิ่มรูปภาพกับไฟล์ต่างๆ ที่อยู่ในคำถาม หรือคำตอบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/upload}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{Form-data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{(file)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{URL to file path(STRING), filename(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:uploadFileFunc}
+      \end{table}
+    \newpage
+    \subitem{- \textbf{delete file}} ฟังก์ชันการลบรูปภาพกับไฟล์ต่างๆ ทีี่อยู่ในคำถาม หรือคำตอบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/file}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{DELETE}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{filename(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{delete status(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:deleteFileFunc}
+      \end{table}
+    \subitem{- \textbf{update category}} ฟังก์ชันการแก้ไขหมวดหมู่คำถาม
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/\{:id\}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{category data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:getCategoryDetailsFunc}
+      \end{table}
+    \subitem{- \textbf{get category details}} ฟังก์ชันการดูคำถามที่อยู่ภายในหมวดหมู่คำถาม
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/\{:id\}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{category data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:getCategoryDetailsFunc}
+      \end{table}
+    \subitem{- \textbf{get my categories}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมดของตนเอง
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/by/my-cat?page=\{:page\}\&search=\{:search\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{page(NUMBER), search(STRING)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{categories data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:getMyCategoiesFunc}
+        \end{table}
+    \newpage
+    \subitem{- \textbf{get public categories}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมดที่เป็นสาธารณะ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/category/by/public-cat?page=\\
+                                                \{:page\}\&search=\{:search\}
+                                              \end{tabular}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{page(NUMBER), search(STRING)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{categories data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:getPublicCategoriesFunc}
+        \end{table}
+    \subitem{- \textbf{get all categories for public exam}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมด ที่ใช้สำหรับสร้างข้อสอบที่เป็นสาธารณะ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/by/public-exam}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{categories data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:getAllCategoriesForPublicExamFunc}
+        \end{table}
+    \subitem{- \textbf{get all categories for private exam}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมด ที่ใช้สำหรับสร้างข้อสอบที่ไม่เปิดเป็นเป็นสาธารณะ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/by/private-exam}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{categories data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:getAllCategoriesForPrivateExamFunc}
+        \end{table}
+    \newpage
+    \subitem{- \textbf{delete category}} ฟังก์ชันการลบหมวดหมู่คำถาม
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/\{:id\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{DELETE}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{categories data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:deleteCategoryFunc}
+        \end{table}
+    \subitem{- \textbf{copy category}} ฟังก์ชันการคัดลอกหมวดหมู่คำถาม ที่ต้องการคัดลอก เช่น คัดลอกหมวดหมู่คำถามสาธารณะ หรือคัดลอกหมวดหมู่คำถามของตนเอง
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/fork/\{:id\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{categories data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:copyMyCategoryFunc}
+        \end{table}
 \end{enumerate}
