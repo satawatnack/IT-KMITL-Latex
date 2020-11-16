@@ -1770,7 +1770,7 @@
 รายละเอียดของแต่ละเซอร์วิสของเว็บแอพพลิเคชั่นประเมินความสามารถเบื้องต้นของผู้สมัครงาน ที่ทางผู้จัดทำได้พัฒนาขึ้น มีด้วยกันทั้งหมด 6 เซอร์วิสดังต่อไปนี้
 
 \begin{enumerate}
-  \item \textbf{user serivce} เป็นเซอร์วิสที่จัดการกับข้อมูลผู้ใช้งาน เพื่อเข้าใช้งานระบบ โดยมีฟังก์ชันต่างๆดังนี้
+  \item \textbf{user serivce} เป็นเซอร์วิสที่จัดการกับข้อมูลผู้ใช้งาน เพื่อเข้าใช้งานระบบ และเป็นข้อมูลอ้างอิงในการสร้างส่วนต่างๆในระบบ โดยมีฟังก์ชันต่างๆดังนี้
     \subitem{- \textbf{create user}} ฟังก์ชันสร้างผู้ใช้งาน เพื่อเข้าใช้งานระบบ
       \begin{table}[H]
         \centering
@@ -1977,7 +1977,7 @@
           \end{tabular}
         \label{Table:deleteUserFunc}
       \end{table}
-  \item \textbf{category service} เป็นเชอร์วิสที่จัดการกับหมวดหมู่คำถาม โดยใช้สำหรับเก็บคำถามที่แบ่งตามหมวดหมู่ เพื่อไว้ใช้ในการสุ่มข้อสอบ
+  \item \textbf{category service} เป็นเชอร์วิสที่จัดการกับหมวดหมู่คำถาม โดยสร้างคำถามที่แบ่งตามเป็นหมวดหมู่ต่างๆ ตามที่ผู้ใช้ต้องการ พร้อมกำหนดระดับความยากของคำถามในแต่ละข้อ
     \subitem{- \textbf{create category}} ฟังก์ชันการสร้างหมวดหมู่คำถาม
       \begin{table}[H]
         \centering
@@ -2074,7 +2074,7 @@
             \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/category/\{:id\}}\\[-\rowheight]
             \printcelltop                 & \printcellmiddle\\ 
             \hline
-            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
             \printcelltop                 & \printcellmiddle\\ 
             \hline
             \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
@@ -2086,14 +2086,14 @@
             \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
             \printcelltop                 & \printcellmiddle\\ 
             \hline
-            \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+            \vcell{\textbf{Body:}}         & \vcell{category data}\\[-\rowheight]
             \printcelltop                 & \printcellmiddle\\ 
             \hline
             \vcell{\textbf{Response:}}     & \vcell{category data}\\[-\rowheight]
             \printcelltop                 & \printcellmiddle\\
             \hline
           \end{tabular}
-        \label{Table:getCategoryDetailsFunc}
+        \label{Table:updateCategoryFunc}
       \end{table}
     \subitem{- \textbf{get category details}} ฟังก์ชันการดูคำถามที่อยู่ภายในหมวดหมู่คำถาม
       \begin{table}[H]
@@ -2124,6 +2124,7 @@
           \end{tabular}
         \label{Table:getCategoryDetailsFunc}
       \end{table}
+    \newpage
     \subitem{- \textbf{get my categories}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมดของตนเอง
         \begin{table}[H]
           \centering
@@ -2153,8 +2154,7 @@
             \end{tabular}
           \label{Table:getMyCategoiesFunc}
         \end{table}
-    \newpage
-    \subitem{- \textbf{get public categories}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมดที่เป็นสาธารณะ
+    \subitem{- \textbf{get public categories}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมดที่เป็นสาธารณะ และไม่ใช่หมวดหมู่คำถามของตนเอง
         \begin{table}[H]
           \centering
             \begin{tabular}{|p{3cm}|p{7cm}|}
@@ -2216,6 +2216,7 @@
             \end{tabular}
           \label{Table:getAllCategoriesForPublicExamFunc}
         \end{table}
+    \newpage
     \subitem{- \textbf{get all categories for private exam}} ฟังก์ชันการดูหมวดหมู่คำถามทั้งหมด ที่ใช้สำหรับสร้างข้อสอบที่ไม่เปิดเป็นเป็นสาธารณะ
         \begin{table}[H]
           \centering
@@ -2245,7 +2246,6 @@
             \end{tabular}
           \label{Table:getAllCategoriesForPrivateExamFunc}
         \end{table}
-    \newpage
     \subitem{- \textbf{delete category}} ฟังก์ชันการลบหมวดหมู่คำถาม
         \begin{table}[H]
           \centering
@@ -2303,5 +2303,215 @@
               \hline
             \end{tabular}
           \label{Table:copyMyCategoryFunc}
+        \end{table}
+    \newpage
+    \item \textbf{exam serivce} เป็นเซอร์วิสที่จัดการกับรายละเอียดต่างๆในข้อสอบ ข้อสอบนั้นสามารถกำหนดได้ว่า ต้องการนำคำถามจากหมวดหมู่คำถามไหนมาใช้ในข้อสอบ ใช้จำนวนกี่ข้อ และต้องการระดับความยากเท่าใด  โดยมีฟังก์ชันต่างๆดังนี้
+      \subitem{- \textbf{create exam}} ฟังก์ชันการสร้างข้อสอบ โดยกำหนดรายละเอียดต่างๆของข้อสอบ เช่น ต้องการหมวดหมู่คำถามใดบ้าง, ต้องการกี่ข้อและระดับความยากเท่าใด, ให้เวลาในการทำข้อสอบเท่าใด และวันสุดท้ายที่สามารถทำข้อสอบได้ เมื่อกำหนดรายละเอียดต่างๆของข้อสอบเรียบร้อยแล้ว ระบบจะสุ่มคำถามเมื่อส่งข้อสอบให้ผู้สมัครงานทำ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/exam}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:createExamFunc}
+        \end{table}
+      \subitem{- \textbf{get exam details}} ฟังก์ชันการดูรายละเอียดข้อสอบ เพื่อดูรายละเอียดภายในข้อสอบนั้นๆ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/exam/\{:id\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:getExamDetailsFunc}
+        \end{table}
+    \newpage
+    \subitem{- \textbf{update exam}} ฟังก์ชันการแก้ไขรายละเอียดต่างๆภายในข้อสอบ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/exam/\{:id\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:updateExamFunc}
+        \end{table}
+    \subitem{- \textbf{get my exams}} ฟังก์ชันการดูข้อสอบทั้งหมดของตนเอง
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/exam/by/my-exam?page=\{:page\}\&search=\{:search\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{page(NUMBER), search(STRING)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{exams data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:myExamFunc}
+        \end{table}
+    \subitem{- \textbf{get public exams}} ฟังก์ชันการดูข้อสอบทั้งหมดที่เป็นสาธารณะ และไม่ใช่ข้อสอบของตนเอง
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{
+                                                \begin{tabular}[b]{@{}l@{}}
+                                                  https://\{url\}/exam/by/public?page=\{:page\}\\\&search=\{:search\}
+                                                \end{tabular}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{page(NUMBER), search(STRING)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{exams data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:myExamFunc}
+        \end{table}
+    \newpage
+    \subitem{- \textbf{delete exam}} ฟังก์ชันการลบข้อสอบของตนเอง
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/exam/\{:id\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{DELETE}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{exams data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:deleteExamFunc}
+        \end{table}
+    \subitem{- \textbf{copy exam}} ฟังก์ชันการคัดลอกข้อสอบ จากข้อสอบสาธารณะมาเก็บไว้ในข้อสอบของตนเอง เพื่อนำมาใช้ หรือนำมาแก้ไข โดยการคัดลอกนี้จะทำการคัดลอก หมวดหมู่คำถามที่ใช้ในข้อสอบนั้น มาเก็บไว้ในหมวดหมู่คำถามของตนเองด้วย
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/exam/fork/\{:id\}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{exams data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:deleteExamFunc}
         \end{table}
 \end{enumerate}
