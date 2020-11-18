@@ -45,7 +45,7 @@
   \item ผู้ทำข้อสอบสามารถเข้ามาทำข้อสอบในเว็บแอพพลิเคชั่นได้ตลอด หากเวลาในการทำข้อสอบยังไม่หมด
   \item เมื่อผู้ทำข้อสอบทำการส่งข้อสอบแล้ว ระบบสามารถตรวจข้อสอบที่เป็นปรนัยได้
   \item มีการแสดงสถานะบอกว่าผู้ใช้งาน ตรวจข้อสอบนั้นหรือยัง
-  \item มีการสรุปคะแนนรวมข้อผู้ทำข้อสอบ
+  \item มีการสรุปคะแนนรวมของผู้สมัครงาน
 \end{enumerate}
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash}p{#1}}
@@ -1763,9 +1763,9 @@
 
 \section{รายละเอียดการพัฒนาระบบ}
 
-เว็บแอพพลิเคชั่นประเมินความสามารถเบื้องต้นของผู้สมัครงาน ได้แบ่งการพัฒนาออกเป็น 2 ส่วนหลักๆ คือส่วนต่อประสานกับผู้ใช้ และส่วนที่จัดการกับฐานข้อมูล
+เว็บแอพพลิเคชั่นประเมินความสามารถเบื้องต้นของผู้สมัครงาน ได้แบ่งการพัฒนาออกเป็น 3 ส่วนหลักๆ คือส่วนที่จัดการกับฐานข้อมูล, ส่วนต่อประสานกับผู้ใช้ และส่วนที่สร้างคอนเทนเนอร์เพื่อนำไปใช้ในการดิพลอยด้วย Kubernetes
 
-\subsection{ส่วนต่อประสานกับผู้ใช้ (back-end)}
+\subsection{ส่วนที่จัดการกับฐานข้อมูล (back-end)}
 
 รายละเอียดของแต่ละเซอร์วิสของเว็บแอพพลิเคชั่นประเมินความสามารถเบื้องต้นของผู้สมัครงาน ที่ทางผู้จัดทำได้พัฒนาขึ้น มีด้วยกันทั้งหมด 6 เซอร์วิสดังต่อไปนี้
 
@@ -2066,7 +2066,7 @@
           \end{tabular}
         \label{Table:deleteFileFunc}
       \end{table}
-    \subitem{- \textbf{update category}} ฟังก์ชันการแก้ไขหมวดหมู่คำถาม
+    \subitem{- \textbf{update category}} ฟังก์ชันการแก้ไขหมวดหมู่คำถาม หากมีการส่งข้อสอบให้ผู้สมัครงานทำแล้ว จะสามารถแก้ไขได้เฉพาะคำตอบ
       \begin{table}[H]
         \centering
           \begin{tabular}{|p{3cm}|p{7cm}|}
@@ -2246,7 +2246,7 @@
             \end{tabular}
           \label{Table:getAllCategoriesForPrivateExamFunc}
         \end{table}
-    \subitem{- \textbf{delete category}} ฟังก์ชันการลบหมวดหมู่คำถาม
+    \subitem{- \textbf{delete category}} ฟังก์ชันการลบหมวดหมู่คำถาม หากมีการใช้หมวดหมู่คำถามที่อยู่ในข้อสอบ จะไม่สามารถทำการลบได้
         \begin{table}[H]
           \centering
             \begin{tabular}{|p{3cm}|p{7cm}|}
@@ -2512,6 +2512,412 @@
               \printcelltop                 & \printcellmiddle\\
               \hline
             \end{tabular}
-          \label{Table:deleteExamFunc}
+          \label{Table:copyExamFunc}
+        \end{table}
+    \item \textbf{send exam serivce} เป็นเซอร์วิสที่ไว้ใช้ในการส่งข้อสอบให้ผู้สมัครงานทำ ผ่านทางอีเมล และจัดเก็บประวัติการส่งเอาไว้ โดยมีฟังก์ชันต่างๆดังนี้
+      \subitem{- \textbf{send exam}} ฟังก์ชันการส่งข้อสอบให้ผู้สมัครงานทำ โดยเมื่อผู้ใช้กดส่งข้อสอบ ระบบจะทำการสุ่มคำถามที่ข้อสอบนั้นได้กำหนดหมวดหมู่คำถามที่ต้องการ จำนวนข้อ และระดับความยาก แล้วส่งให้ผู้สมัครงานตามอีเมลที่กำหนด
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{https://\{url\}/send-exam}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{POST}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{send exam data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{send exam data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:sendExamFunc}
+      \end{table}
+      \subitem{- \textbf{get sent exams}} ฟังก์ชันการดูประวัติการส่งข้อสอบให้ผู้สมัครงาน
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/send-exam/?page=\{:page\}\\\&search=\{:search\}
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{page(NUMBER), search(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{send exams data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:getSendExamsFunc}
+      \end{table}
+      \subitem{- \textbf{delete send exams}} ฟังก์ชันการลบประวัติการส่งข้อสอบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/send-exam/\{:id\}
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{DELETE}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{send exam data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:deleteSendExamFunc}
+      \end{table}
+    \item \textbf{do exam serivce} เป็นเซอร์วิสที่ใช้สำหรับทำข้อสอบที่พนักงานส่งมาให้ โดยมีระยะเวลาในการทำข้อสอบที่จำกัด และมีวันหมดอายุหากผู้สมัครงานไม่ทำข้ออสอบในเวลาที่กำหนด
+      \subitem{- \textbf{get exam by id}} ฟังก์ชันการดูรายละเอียดของข้อสอบก่อนที่ผู้สมัครจะเริ่มทำข้อสอบ โดยจะกล่าวถึงชื่อผู้สมัคร และรายละเอียดต่างๆของข้อสอบ ก่อนที่ผู้สมัครจะเริ่มทำข้อสอบ
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/do-exam/\{:id\}
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{do exam data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:getDoExamFunc}
+      \end{table}
+      \subitem{- \textbf{start do exam}} ฟังก์ชันการเริ่มทำข้อสอบ โดยระบบจะเริ่มจับเวลาในการทำข้อสอบ และเปิดให้ผู้ใช้ลงมือทำข้อสอบได้
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/do-exam/start/\{:id\}
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{do exam data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:startDoExamFunc}
+      \end{table}
+      \subitem{- \textbf{send do exam}} ฟังก์ชันการส่งข้อสอบเมื่อผู้สมัครงานทำข้อสอบเสร็จแล้วกดส่ง หรือหมดเวลาในการทำข้อสอบ ระบบจะทำการตรวจข้อสอบที่เป็นปรนัยแล้วส่งข้อสอบให้ทางทางบริษัท พร้อมสรุปคะแนนในส่วนที่เป็นข้อสอบปรนัย
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/do-exam/done/\{:id\}
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{do exam data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{do exam data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:doneDoExamFunc}
+      \end{table}
+      \subitem{- \textbf{upload file}} ฟังก์ชันการเพิ่มไฟล์ หากทางบริษัทให้โจทย์ที่ต้องตอบกลับเป็นไฟล์ต่างๆ เช่น ไฟล์ที่เป็น Excel
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/upload
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{Format-data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{(file)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{URL to file path(STRING), filename(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:uploadFileFunc}
+      \end{table}
+      \subitem{- \textbf{delete file}} ฟังก์ชันการลบไฟล์ ในกรณีที่ผู้สมัครงานได้ทำการเพิ่มไฟล์ไป แล้วต้องการแก้ไขไฟล์นั้น
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/file
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{DELETE}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{False}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{filename(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{delete status(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:deleteFileFunc}
+      \end{table}
+    \item \textbf{finished exam serivce} เป็นเซอร์วิสที่ไว้สำหรับให้ทางบริษัทตรวจข้อสอบที่เป็นอัตนัยและข้อสอบที่มีการอัพโหลดไฟล์ แล้วสรุปผลออกมาเป็นคะแนน โดยมีฟังก์ชันต่างๆดังนี้
+    \subitem{- \textbf{get finished exams}} ฟังก์ชันการดูข้อสอบทั้งหมด ที่ผู้สมัครทำเสร็จแล้ว
+      \begin{table}[H]
+        \centering
+          \begin{tabular}{|p{3cm}|p{7cm}|}
+            \hline
+            \vcell{\textbf{URL:}}          & \vcell{
+                                              \begin{tabular}[b]{@{}l@{}}
+                                                https://\{url\}/finished-exams?page=\{page\}\\\&search=\{search\}
+                                              \end{tabular}}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Parameters:}}   & \vcell{page(NUMBER), search(STRING)}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\ 
+            \hline
+            \vcell{\textbf{Response:}}     & \vcell{finished exams data}\\[-\rowheight]
+            \printcelltop                 & \printcellmiddle\\
+            \hline
+          \end{tabular}
+        \label{Table:finishedExamFunc}
+      \end{table}
+    \subitem{- \textbf{get finished exam details}} ฟังก์ชันการดูข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว เพื่อทำการตรวจข้อสอบ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{
+                                                \begin{tabular}[b]{@{}l@{}}
+                                                  https://\{url\}/finished-exams/\{:id\}
+                                                \end{tabular}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{GET}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{finished exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:getFinishedExamDetailFunc}
+        \end{table}
+    \subitem{- \textbf{verify finished exam}} ฟังก์ชันการยืนยันการตรวจข้อสอบ เพื่อให้ระบบทำการบันทึกคะแนนที่ทางบริษัททำการตรวจข้อสอบ
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{
+                                                \begin{tabular}[b]{@{}l@{}}
+                                                  https://\{url\}/finished-exams/\{:id\}
+                                                \end{tabular}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{PATCH}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{finished exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:veriftFinishedExamFunc}
+        \end{table}
+    \subitem{- \textbf{delete finished exam}} ฟังก์ชันการลบข้อสอบที่ผู้สมัครงานทำเสร็จแล้ว
+        \begin{table}[H]
+          \centering
+            \begin{tabular}{|p{3cm}|p{7cm}|}
+              \hline
+              \vcell{\textbf{URL:}}          & \vcell{
+                                                \begin{tabular}[b]{@{}l@{}}
+                                                  https://\{url\}/finished-exams/\{:id\}
+                                                \end{tabular}}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Method:}}       & \vcell{DELETE}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Auth require:}} & \vcell{True}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Format:}}       & \vcell{JSON}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Parameters:}}   & \vcell{id(ID)}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Body:}}         & \vcell{-}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\ 
+              \hline
+              \vcell{\textbf{Response:}}     & \vcell{finished exam data}\\[-\rowheight]
+              \printcelltop                 & \printcellmiddle\\
+              \hline
+            \end{tabular}
+          \label{Table:deleteFinishedExamFunc}
         \end{table}
 \end{enumerate}
+
+\subsection{ส่วนต่อประสานกับผู้ใช้ (front-end)}
+
+ในส่วนนี้ได้มีการออกแบบด้วย Figma ซึ่งเป็นเครื่องมือที่ไว้ใช้ในการออกแบบโปรโตไทป์ของงานก่อนที่จะเริ่มพัฒนา ด้วยการนำความต้องการต่างๆที่ได้รับมาออกแบบส่วนประสานกับผู้ใช้ โดยในแต่ละหน้าจะบันทึกว่ามีการใช้เซอร์วิสไหนในหน้านั้นบ้าง และแต่ละปุ่มของหน้านั้นกดแล้วปลายทางไปที่หน้าไหนดังรูปที่ 3.3 หลังจากนั้นทำการพัฒนาส่วนต่อประสานกับผู้ใช้ด้วย Vue.js
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\columnwidth]{exama.png}
+  \caption{แสดงตัวอย่างการใช้งาน Figma}
+  \label{Fig:useFigma}
+\end{figure}
+
+\subsection{สร้างคอนเทนเนอร์}
+
+ทั้งในส่วนต่อประสานกับผู้ใช้(front-end) และส่วนที่จัดการกับฐานข้อมูล(back-end) แต่ละส่วนจะถูกทำให้เป็นคอนเทนเนอร์โดยใช้ Docker เพื่อให้สะดวกต่อการ Deploy ด้วย Kubernetes โดยแต่ละส่วนจะมี Dockerfile ไว้สำหรับสร้างคอนเทนเนอร์อิมเมจของส่วนนั้นๆ โดยเราจะสร้างด้วยวิธี multi-stage build docker ที่จะมาช่วยในการลดขนาดของอิมเมจ ด้วยการนำของจากอิมเมจหนึ่งมาใส่ในอีกอิมเมจหนึ่ง เช่นดังรูป 3.4 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\columnwidth]{dokcerfile.png}
+  \caption{แสดงการเขียน Dockerfile ด้วยการทำ multi-stage build docker}
+  \label{Fig:useDockerFile}
+\end{figure}
