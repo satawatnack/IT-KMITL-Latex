@@ -164,7 +164,7 @@
     \cleardoublepage
 }
 
-\titlecontents{table}[0mm]{\stepcounter{lotitem}\lotheadcont{\thelinenumber}{\thelotitem}{\listftablename}}{\contentspush{\thecontentslabel\hspace{2mm}}}{}{\hfill \contentspage}
+\titlecontents{table}[0mm]{\stepcounter{lotitem}\lotheadcont{\thelinenumber}{\thelotitem}{\listtablename}}{\contentspush{\thecontentslabel\hspace{2mm}}}{}{\hfill \contentspage}
 
 % ##### LOF Overrided 
 \newcommand{\lofheadcont}[3]{
